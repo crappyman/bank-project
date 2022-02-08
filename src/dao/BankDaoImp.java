@@ -3,22 +3,33 @@ package dao;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+
+import pojo.BankEmployeePojo;
 import pojo.BankPojo;
 
 public class BankDaoImp implements BankDao {
 
 	List<BankPojo> allCustomer;
-	List<BankPojo> allEmployee;
+	List<BankEmployeePojo> allEmployee;
 	
 	public BankDaoImp() {
 		allCustomer=new ArrayList<BankPojo>();
-		allCustomer.add( 101,"Daria", "39999");
-		allCustomer.add(102,"Bob","895354");
-		allCustomer.add(103,"Samanta","575574");
-		allEmployee=new ArrayList<BankPojo>();
-		allEmployee.add(2344,"jon");
-		allEmployee.add(59696,"dan");
-		allEmployee.add(856,"roby");
+		
+		BankPojo bank1=new BankPojo(101,"Daria", "39999");
+		BankPojo bank2=new BankPojo(102,"Bob","895354");
+		BankPojo bank3=new BankPojo(103,"Samanta","575574");
+		
+		
+		allCustomer.add(bank1);
+		allCustomer.add(bank2);
+		allCustomer.add(bank3);
+		
+		
+		allEmployee=new ArrayList<BankEmployeePojo>();
+		
+		allEmployee.add(new BankEmployeePojo(2344,"jon"));
+		allEmployee.add(new BankEmployeePojo(59696,"dan"));
+		allEmployee.add(new BankEmployeePojo(856,"roby"));
 		
 	}
 
@@ -28,7 +39,7 @@ public class BankDaoImp implements BankDao {
 	}
 
 	@Override
-	public List<BankPojo> allEmployee() {
+	public List<BankEmployeePojo> allEmployee() {
 		return allEmployee;
 	}
 
@@ -54,12 +65,12 @@ public class BankDaoImp implements BankDao {
 	}
 
 	@Override
-	public BankPojo fechEAcc(String employeeName, int employeeID) {
+	public BankEmployeePojo fechEAcc(String employeeName, int employeeID) {
 		
 		BankPojo returnEBankPojo=null;
-		Iterator<BankPojo> itr = allEmployee.iterator();
+		Iterator<BankEmployeePojo> itr = allEmployee.iterator();
 		while(itr.hasNext()) {
-			BankPojo bankE = itr.next();
+			BankEmployeePojo bankE = itr.next();
 			if(bankE.getEmployeeID() == employeeID && bankE.getEmployeeName()==employeeName) 
 				returnEBankPojo = bankE;
 		}
