@@ -1,4 +1,6 @@
 import java.util.List;
+
+import pojo.BankEmployeePojo;
 import pojo.BankPojo;
 
 public interface BankDao {
@@ -6,7 +8,7 @@ public interface BankDao {
 	List<BankPojo> allCustomer();
 
 	// create a list of employee name
-	List<BankPojo> allEmployee();
+	List<BankEmployeePojo> allEmployee();
 
 	// to create a customer account
 	BankPojo addAccount(String name, String passWord, String ssN);
@@ -16,7 +18,7 @@ public interface BankDao {
 
 	// to check the exist of the Employee account
 
-	BankPojo fechEAcc(String employeeName, int employeeID);
+	BankEmployeePojo fechEAcc(String employeeName, int employeeID);
 
 	BankPojo fechBlance();
 
