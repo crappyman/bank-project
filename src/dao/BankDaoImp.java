@@ -80,14 +80,14 @@ public class BankDaoImp implements BankDao {
 		}
 
 	@Override
-	public BankPojo fechBlance() {
-		// TODO Auto-generated method stub
+	public BankPojo fechBlance(String name) {
+		
 		return null;
 	}
 
 	@Override
 	public BankPojo fechWithdawel(double mony) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 

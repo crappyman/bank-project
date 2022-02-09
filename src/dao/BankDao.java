@@ -20,7 +20,7 @@ public interface BankDao {
 
 	BankEmployeePojo fechEAcc( int employeeID);
 
-	BankPojo fechBlance();
+	BankPojo fechBlance(String name);
 
 	// to withdrawal
 	BankPojo fechWithdawel(double mony);

@@ -5,7 +5,7 @@ public class BankPojo {
 	private int customerID;
 	private float withdawell;
 	private double blance;
-	private double deposit;
+	private double deposit=0.0;
 	private String customerName;
 	private String customerSSN;
 	private String passWord;
