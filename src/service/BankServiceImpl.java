@@ -1,40 +1,46 @@
 package service;
 
 import java.util.List;
-
+import dao.BankDao;
+import dao.BankDaoImp;
 import pojo.BankEmployeePojo;
 import pojo.BankPojo;
 
 public class BankServiceImpl implements BankService {
+	
+	BankDao bankDao;
+	BankDao bankEDao;
+	
+	
+
+	public BankServiceImpl() {
+		bankDao=new BankDaoImp();
+		bankEDao=new BankDaoImp();
+	}
 
 	@Override
 	public List<BankPojo> allCustomer() {
-		// TODO Auto-generated method stub
-		return null;
+		return bankDao.allCustomer();
 	}
 
 	@Override
 	public List<BankEmployeePojo> allEmployee() {
-		// TODO Auto-generated method stub
-		return null;
+		return bankEDao.allEmployee();
 	}
 
 	@Override
 	public BankPojo addAccount(BankPojo bankPojo) {
-		// TODO Auto-generated method stub
-		return null;
+		return bankDao.addAccount(bankPojo);
 	}
 
 	@Override
 	public BankPojo fetchCAcc(int customerid) {
-		// TODO Auto-generated method stub
-		return null;
+		return bankDao.fetchCAcc(customerid);
 	}
 
 	@Override
 	public BankEmployeePojo fechEAcc(int employeeID) {
-		// TODO Auto-generated method stub
-		return null;
+		return bankEDao.fechEAcc(employeeID);
 	}
 
 	@Override
