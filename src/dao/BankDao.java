@@ -11,21 +11,21 @@ public interface BankDao {
 	List<BankEmployeePojo> allEmployee();
 
 	// to create a customer account
-	BankPojo addAccount(String name, String passWord, String ssN);
+	BankPojo addAccount(BankPojo bankPojo);
 
 	// to check the exist of the customer account
 	BankPojo fetchCAcc(int customerid);
 
 	// to check the exist of the Employee account
 
-	BankEmployeePojo fechEAcc(String employeeName, int employeeID);
+	BankEmployeePojo fechEAcc( int employeeID);
 
 	BankPojo fechBlance();
 
 	// to withdrawal
-	BankPojo fechWithdawel(float mony);
+	BankPojo fechWithdawel(double mony);
 
 	// to deposit money
-	BankPojo depositMoney(float monye);
+	BankPojo depositMoney(double monye);
 
 }

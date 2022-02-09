@@ -44,10 +44,12 @@ public class BankDaoImp implements BankDao {
 	}
 
 	@Override
-	public BankPojo addAccount(String name, String passWord, String ssN) {
+	public BankPojo addAccount(BankPojo bankPojo) {
 		int addACC=allCustomer.get(allCustomer.size()-1).getCustomerID()+1;
-		BankPojo setCustomerID(addACC);
-		allCustomer.add(addACC);
+		bankPojo.setCustomerID(addACC);
+		allCustomer.add(bankPojo);
+		
+		return bankPojo;
 	}
 
 	@Override
@@ -65,37 +67,17 @@ public class BankDaoImp implements BankDao {
 	}
 
 	@Override
-	public BankEmployeePojo fechEAcc(String employeeName, int employeeID) {
+	public BankEmployeePojo fechEAcc( int employeeID) {
 		
-		BankPojo returnEBankPojo=null;
+		BankEmployeePojo returnEBankPojo=null;
 		Iterator<BankEmployeePojo> itr = allEmployee.iterator();
 		while(itr.hasNext()) {
 			BankEmployeePojo bankE = itr.next();
-			if(bankE.getEmployeeID() == employeeID && bankE.getEmployeeName()==employeeName) 
+			if(bankE.getEmployeeID() == employeeID ) 
 				returnEBankPojo = bankE;
 		}
 		return returnEBankPojo;
-		@Override
-		public float fechBlance() 
-		{
-			float balance=0.0f;
-			return balance;
 		}
-
-		@Override
-		public BankPojo fechWithdawel(float mony) {
-			
-			
-		}
-
-		@Override
-		public BankPojo depositMoney(float monye) {
-			float monye+=mony.getBlance();
-			return BankPojo mony;
-					
-		}
-		
-	}
 
 	@Override
 	public BankPojo fechBlance() {
@@ -104,15 +86,19 @@ public class BankDaoImp implements BankDao {
 	}
 
 	@Override
-	public BankPojo fechWithdawel(float mony) {
+	public BankPojo fechWithdawel(double mony) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public BankPojo depositMoney(float monye) {
+	public BankPojo depositMoney(double monye) {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+
+
+
 
 }

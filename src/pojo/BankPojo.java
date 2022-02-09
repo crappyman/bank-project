@@ -4,8 +4,8 @@ public class BankPojo {
 	
 	private int customerID;
 	private float withdawell;
-	private float blance;
-	private float deposit;
+	private double blance;
+	private double deposit;
 	private String customerName;
 	private String customerSSN;
 	private String passWord;
@@ -85,7 +85,7 @@ public class BankPojo {
 
 
 
-				public float getBlance() {
+				public double getBlance() {
 				return blance;
 				}
 
@@ -97,7 +97,7 @@ public class BankPojo {
 
 
 
-				public float getDeposit() {
+				public double getDeposit() {
 				return deposit;
 				}
 
