@@ -15,9 +15,9 @@ public class BankDaoImp implements BankDao {
 	public BankDaoImp() {
 		allCustomer=new ArrayList<BankPojo>();
 		
-		BankPojo bank1=new BankPojo(101,"Daria", "39999");
-		BankPojo bank2=new BankPojo(102,"Bob","895354");
-		BankPojo bank3=new BankPojo(103,"Samanta","575574");
+		BankPojo bank1=new BankPojo(101,"Daria", "39999",7865);
+		BankPojo bank2=new BankPojo(102,"Bob","895354",567);
+		BankPojo bank3=new BankPojo(103,"Samanta","575574",694);
 		
 		
 		allCustomer.add(bank1);
@@ -45,8 +45,8 @@ public class BankDaoImp implements BankDao {
 
 	@Override
 	public BankPojo addAccount(BankPojo bankPojo) {
-		int addACC=allCustomer.get(allCustomer.size()-1).getCustomerID()+1;
-		bankPojo.setCustomerID(addACC);
+		int addACCID=allCustomer.get(allCustomer.size()-1).getCustomerID()+1;
+		 bankPojo.setCustomerID(addACCID);
 		allCustomer.add(bankPojo);
 		
 		return bankPojo;

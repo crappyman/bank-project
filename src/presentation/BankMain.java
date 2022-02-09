@@ -27,7 +27,17 @@ public class BankMain {
           int  userChoice = scan.nextInt();
           switch (userChoice) {
                 
-          case 1:
+          case 1:BankPojo newAcc=new BankPojo();
+          System.out.println("Enter Your Full Name :");
+          newAcc.setCustomerName(scan.nextLine());
+          
+          System.out.println("Enter Your PassWord :");
+          newAcc.setPassWord(scan.nextLine());
+          
+          System.out.println(" Enter Your Money you Want To Put In Your Account :");
+          newAcc.setDeposit(scan.nextLong());
+          
+          
           case2:
           case3:
           case4:

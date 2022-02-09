@@ -5,7 +5,7 @@ public class BankPojo {
 	private int customerID;
 	private float withdawell;
 	private double blance;
-	private double deposit=0.0;
+	private long deposit=0;
 	private String customerName;
 	private String customerSSN;
 	private String passWord;
@@ -16,11 +16,12 @@ public class BankPojo {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public BankPojo(int customerID, String customerName, String customerSSN) {
+	public BankPojo(int customerID, String customerName, String passWord,long  deposit) {
 
 		this.customerID = customerID;
 		this.customerName = customerName;
-		this.customerSSN = customerSSN;
+		this.passWord = passWord;
+		this.deposit=deposit;
 
 		}
 
@@ -103,7 +104,7 @@ public class BankPojo {
 
 
 
-				public void setDeposit(float deposit) {
+				public void setDeposit(long deposit) {
 				this.deposit = deposit;
 				}
 			}
