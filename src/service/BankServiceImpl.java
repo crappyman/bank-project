@@ -44,9 +44,11 @@ public class BankServiceImpl implements BankService {
 	}
 
 	@Override
-	public BankPojo fechBlance(String name) {
-		// TODO Auto-generated method stub
-		return null;
+	public double fechBlance(BankPojo bankPojo ) 
+	{
+		double balance=0.0;
+		return balance;
+		
 	}
 
 	@Override

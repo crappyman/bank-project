@@ -2,6 +2,7 @@ package presentation;
 
 import java.util.Scanner;
 
+import pojo.BankPojo;
 import service.BankService;
 import service.BankServiceImpl;
 
@@ -24,15 +25,37 @@ public class BankMain {
             System.out.println("0. to quit: \n");
             System.out.print("Enter Your Choice : ");
           int  userChoice = scan.nextInt();
-          /*    switch (userChoice) {
+          switch (userChoice) {
                 
           case 1:
-			System.out.println("*************************************");
-			System.out.println("Please enter menu option : ");
-			int option = scan.nextInt();
-			scan.nextLine();*/
-			System.out.println("*************************************");
-	}
+          case2:
+          case3:
+          case4:
+        	  System.out.println("Your Balance is Full Name");
+         // BankPojo name = scan.next();
+         double blanse  = 0.0;//bankService.fechBlance(name)
+			if(blanse ==0.0 ) {
+				System.out.println("Please enter a valid Name!");
+			//	break;
+          //case5:
+          case0:
 
+				System.out.println("************************************");
+				System.out.println("Exiting System....");
+				System.out.println("Thankyou for using Bank Management System");
+				System.out.println("************************************");
+				System.exit(0);
+	break;
+		}
+		System.out.println("Do you want to continue(y/n) : ");
+		ch = scan.next().charAt(0);
+		scan.nextLine();
+
+		}
+		
+		System.out.println("*****************************************");
+		System.out.println("Exiting System....");
+		System.out.println("Thankyou for using Bank Management System");
+		System.out.println("*****************************************");
 }
-}
+}}

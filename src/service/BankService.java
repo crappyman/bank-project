@@ -22,7 +22,7 @@ public interface BankService {
 
 		BankEmployeePojo fechEAcc( int employeeID);
 
-		BankPojo fechBlance(String name);
+		double fechBlance(BankPojo bankPojo);
 
 		// to withdrawal
 		BankPojo fechWithdawel(double mony);
