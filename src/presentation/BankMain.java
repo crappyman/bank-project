@@ -1,5 +1,5 @@
 package presentation;
-
+import java.util.List;
 import java.util.Scanner;
 
 import pojo.BankPojo;
@@ -27,7 +27,8 @@ public class BankMain {
           int  userChoice = scan.nextInt();
           switch (userChoice) {
                 
-          case 1:BankPojo newAcc=new BankPojo();
+          case 1:
+        	  BankPojo newAcc=new BankPojo();
           System.out.println("Enter Your Full Name :");
           newAcc.setCustomerName(scan.nextLine());
           
@@ -36,6 +37,9 @@ public class BankMain {
           
           System.out.println(" Enter Your Money you Want To Put In Your Account :");
           newAcc.setDeposit(scan.nextLong());
+          
+          BankPojo addAcco = bankService.addAccount(newAcc);
+          System.out.println("Account Added Successfully!!\nYour new Account  is " + addAcco.getCustomerID());
           
           
           case2:
