@@ -16,15 +16,21 @@ public class BankMain {
 			System.out.println("*************************************");
 			System.out.println("\tBank Management System");
 			System.out.println("*************************************");
-			System.out.println("1. Add a new Account");
-			System.out.println("2. Update a Bo");
-			System.out.println("3. Remove a Book");
-			System.out.println("4. Fetch an Account");
-			System.out.println("5. Exit");
+			System.out.println("1. Create Account");
+            System.out.println("2. Deposit money");
+            System.out.println("3. Withdraw money");
+            System.out.println("4. Check balance");
+            System.out.println("5. Display Account Details");
+            System.out.println("0. to quit: \n");
+            System.out.print("Enter Your Choice : ");
+          int  userChoice = scan.nextInt();
+          /*    switch (userChoice) {
+                
+          case 1:
 			System.out.println("*************************************");
 			System.out.println("Please enter menu option : ");
 			int option = scan.nextInt();
-			scan.nextLine();
+			scan.nextLine();*/
 			System.out.println("*************************************");
 	}
 
