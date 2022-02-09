@@ -15,7 +15,7 @@ public class BankMain {
 		while(ch == 'y') {
 
 			System.out.println("*************************************");
-			System.out.println("\tBank Management System");
+			System.out.println("\t Chase  Bank Management System");
 			System.out.println("*************************************");
 			System.out.println("1. Create Account");
             System.out.println("2. Deposit money");
@@ -30,17 +30,17 @@ public class BankMain {
           case 1:
         	  BankPojo newAcc=new BankPojo();
           System.out.println("Enter Your Full Name :");
-          newAcc.setCustomerName(scan.nextLine());
+          newAcc.setCustomerName(scan.next());
           
           System.out.println("Enter Your PassWord :");
-          newAcc.setPassWord(scan.nextLine());
+          newAcc.setPassWord(scan.next());
           
           System.out.println(" Enter Your Money you Want To Put In Your Account :");
           newAcc.setDeposit(scan.nextLong());
           
           BankPojo addAcco = bankService.addAccount(newAcc);
-          System.out.println("Account Added Successfully!!\nYour new Account  is " + addAcco.getCustomerID());
-          
+          System.out.println("Account Added Successfully!!\nYour new Account  is " + addAcco.getCustomerID()+addAcco.getCustomerName());
+          System.out.println("Your Money Blance is "+addAcco.getDeposit() );
           
           case2:
           case3:
