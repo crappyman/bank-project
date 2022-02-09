@@ -80,9 +80,9 @@ public class BankDaoImp implements BankDao {
 		}
 
 	@Override
-	public BankPojo fechBlance(String name) {
-		
-		return null;
+	public double  fechBlance(BankPojo bankPojo2) {
+		double balance= bankPojo2.getBlance();
+		return balance;
 	}
 
 	@Override
