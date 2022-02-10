@@ -52,9 +52,8 @@ public class BankServiceImpl implements BankService {
 	}
 
 	@Override
-	public BankPojo fechWithdawel(double mony) {
-		// TODO Auto-generated method stub
-		return null;
+	public BankPojo fechWithdawel( int customerID,double mony) {
+		return bankDao.fechWithdawel(customerID, mony);
 	}
 
 	@Override

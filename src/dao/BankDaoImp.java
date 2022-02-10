@@ -74,7 +74,7 @@ public class BankDaoImp implements BankDao {
 		while(itr.hasNext()) {
 			BankEmployeePojo bankE = itr.next();
 			if(bankE.getEmployeeID() == employeeID ) 
-				returnEBankPojo = bankE
+				returnEBankPojo = bankE;
 		}
 		return returnEBankPojo;
 		}
@@ -98,7 +98,7 @@ public class BankDaoImp implements BankDao {
 	@Override
 	public BankPojo fechWithdawel(int customerid,double mony) {
 		BankPojo returnBankPojo=null;
-		double  balance=0.0;
+		;
 		Iterator<BankPojo> itr = allCustomer.iterator();
 		while(itr.hasNext()) {
 			BankPojo bank = itr.next();
@@ -106,7 +106,7 @@ public class BankDaoImp implements BankDao {
 			if(bank.getCustomerID() == customerid) 
 				returnBankPojo = bank;
 			
-			  balance=bank.getBlance();
+		double	  balance=bank.getBlance();
 		
 			balance-=mony;
 			

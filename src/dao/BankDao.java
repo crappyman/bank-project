@@ -24,7 +24,7 @@ public interface BankDao {
 	BankPojo fechBlance(int customerid);
 
 	// to withdrawal
-	double fechWithdawel(int customerid,double mony);
+	BankPojo fechWithdawel(int customerid,double mony);
 
 	// to deposit money
 	BankPojo depositMoney(double monye);

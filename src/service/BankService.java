@@ -25,7 +25,7 @@ public interface BankService {
 		BankPojo fechBlance(int customerID);
 
 		// to withdrawal
-		BankPojo fechWithdawel(double mony);
+		BankPojo fechWithdawel(int customerID,double mony);
 
 		// to deposit money
 		BankPojo depositMoney(double monye);

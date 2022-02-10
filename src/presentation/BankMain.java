@@ -55,16 +55,30 @@ public class BankMain {
 			}
 				 System.out.println("Enter the Monye  that you want to Deposit: ");
 			  double updatmony = scan.nextLong();
-			BankPojo fecNewBlance=bankService.fechWithdawel(updatmony);
+			BankPojo fecNewBlance=bankService.depositMoney(updatmony);
 			System.out.println("Your New Balance Is"+fecNewBlance.getBlance());
 			break;
 				
           case 3:
+        	  System.out.println("Enter your Account  Number");
+  			int accNn = scan.nextInt();
+  			BankPojo fechaCustoumer = bankService.fetchCAcc(accNn);
+  			if(fechaCustoumer == null) {
+  				System.out.println("Please enter a valid Account Number !");
+  				 break;
+  			}
+  			 System.out.println("Enter the Monye  that you want to Withdrall: ");
+  			  double updatmonyy = scan.nextLong();
+  			
+  			BankPojo fecNewBlancee=bankService.fechWithdawel(accNn, updatmonyy);
+  			
+  			System.out.println("Your New Balance Is"+fecNewBlancee.getBlance());
         	  break;
           case 4:
         	  System.out.println("please enter your Account Number");
           int  accN2 = scan.nextInt();
           BankPojo blanse=bankService.fechBlance(accN2);
+         
           if(blanse == null) {
 				System.out.println("Please enter a valid Account Number !");
           }
