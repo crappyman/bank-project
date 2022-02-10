@@ -1,3 +1,5 @@
+package dao;
+
 import java.util.List;
 
 import pojo.BankEmployeePojo;
@@ -19,10 +21,10 @@ public interface BankDao {
 
 	BankEmployeePojo fechEAcc( int employeeID);
 
-	double fechBlance(BankPojo bankPojo2);
+	BankPojo fechBlance(int customerid);
 
 	// to withdrawal
-	BankPojo fechWithdawel(double mony);
+	double fechWithdawel(int customerid,double mony);
 
 	// to deposit money
 	BankPojo depositMoney(double monye);

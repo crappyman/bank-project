@@ -3,9 +3,9 @@ package pojo;
 public class BankPojo {
 	
 	private int customerID;
-	private float withdawell;
+	private double withdawell;
 	private double blance;
-	private long deposit=0;
+	private double deposit=0;
 	private String customerName;
 	private String customerSSN;
 	private String passWord;
@@ -77,10 +77,10 @@ public class BankPojo {
 
 
 
-			public float getWithdawell() {
+			public double getWithdawell() {
 			return withdawell;
 			}
-			public void setWithdawell(float withdawell) {
+			public void setWithdawell(double withdawell) {
 				this.withdawell = withdawell;
 				}
 

@@ -41,15 +41,15 @@ public class BankMain {
           newAcc.setDeposit(scan.nextLong());
           
           BankPojo addAcco = bankService.addAccount(newAcc);
-          System.out.println("Account Added Successfully!!\nYour new Account  is " + addAcco.getCustomerID()+addAcco.getCustomerName());
+          System.out.println("Account Added Successfully!!\nYour new Account  is " + addAcco.getCustomerID());
           System.out.println("Your Money Blance is "+addAcco.getDeposit() );
       break;
           
           case 2:
         	  System.out.println("Enter your Account  Number");
 			int accN = scan.nextInt();
-			BankPojo fechallCustomer = bankService.fetchCAcc(accN);
-			if(fechallCustomer == null) {
+			BankPojo fechaCustomer = bankService.fetchCAcc(accN);
+			if(fechaCustomer == null) {
 				System.out.println("Please enter a valid Account Number !");
 				 break;
 			}
@@ -62,13 +62,16 @@ public class BankMain {
           case 3:
         	  break;
           case 4:
-        	  System.out.println("Your Balance is Full Name");
-         // BankPojo name = scan.next();
-         double blanse  = 0.0;//bankService.fechBlance(name)
-			if(blanse ==0.0 ) {
-				System.out.println("Please enter a valid Name!");
-			}
-				break;
+        	  System.out.println("please enter your Account Number");
+          int  accN2 = scan.nextInt();
+          BankPojo blanse=bankService.fechBlance(accN2);
+          if(blanse == null) {
+				System.out.println("Please enter a valid Account Number !");
+          }
+          System.out.println("Your Money Blance is "+blanse.getBlance());
+				 break;
+         
+	
          
           case 0:
 

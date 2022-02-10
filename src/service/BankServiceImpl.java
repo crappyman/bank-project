@@ -44,10 +44,10 @@ public class BankServiceImpl implements BankService {
 	}
 
 	@Override
-	public double fechBlance(BankPojo bankPojo ) 
+	public BankPojo  fechBlance(int customerID) 
 	{
-		double balance=0.0;
-		return balance;
+		
+		return bankDao.fechBlance(customerID);
 		
 	}
 
