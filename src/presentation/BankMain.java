@@ -25,6 +25,8 @@ public class BankMain {
             System.out.println("0. to quit: \n");
             System.out.print("Enter Your Choice : ");
           int  userChoice = scan.nextInt();
+          scan.nextLine();
+          System.out.println("*************************************");
           switch (userChoice) {
                 
           case 1:
@@ -41,25 +43,41 @@ public class BankMain {
           BankPojo addAcco = bankService.addAccount(newAcc);
           System.out.println("Account Added Successfully!!\nYour new Account  is " + addAcco.getCustomerID()+addAcco.getCustomerName());
           System.out.println("Your Money Blance is "+addAcco.getDeposit() );
+      break;
           
-          case2:
-          case3:
-          case4:
+          case 2:
+        	  System.out.println("Enter your Account  Number");
+			int accN = scan.nextInt();
+			BankPojo fechallCustomer = bankService.fetchCAcc(accN);
+			if(fechallCustomer == null) {
+				System.out.println("Please enter a valid Account Number !");
+				 break;
+			}
+				 System.out.println("Enter the Monye  that you want to Deposit: ");
+			  double updatmony = scan.nextLong();
+			BankPojo fecNewBlance=bankService.fechWithdawel(updatmony);
+			System.out.println("Your New Balance Is"+fecNewBlance.getBlance());
+			break;
+				
+          case 3:
+        	  break;
+          case 4:
         	  System.out.println("Your Balance is Full Name");
          // BankPojo name = scan.next();
          double blanse  = 0.0;//bankService.fechBlance(name)
 			if(blanse ==0.0 ) {
 				System.out.println("Please enter a valid Name!");
-			//	break;
-          //case5:
-          case0:
+			}
+				break;
+         
+          case 0:
 
 				System.out.println("************************************");
 				System.out.println("Exiting System....");
 				System.out.println("Thankyou for using Bank Management System");
 				System.out.println("************************************");
 				System.exit(0);
-	break;
+	
 		}
 		System.out.println("Do you want to continue(y/n) : ");
 		ch = scan.next().charAt(0);
@@ -72,4 +90,4 @@ public class BankMain {
 		System.out.println("Thankyou for using Bank Management System");
 		System.out.println("*****************************************");
 }
-}}
+}
