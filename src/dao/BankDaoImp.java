@@ -15,9 +15,9 @@ public class BankDaoImp implements BankDao {
 	public BankDaoImp() {
 		allCustomer=new ArrayList<BankPojo>();
 		
-		BankPojo bank1=new BankPojo(101,"Daria", "39999",7865);
-		BankPojo bank2=new BankPojo(102,"Bob","895354",567);
-		BankPojo bank3=new BankPojo(103,"Samanta","575574",694);
+		BankPojo bank1=new BankPojo(101,"Daria","Hassn", "39999",576.9);
+		BankPojo bank2=new BankPojo(102,"Bob","Hada","895354",567);
+		BankPojo bank3=new BankPojo(103,"Samanta","Salma","575574",694);
 		
 		
 		allCustomer.add(bank1);
@@ -30,7 +30,6 @@ public class BankDaoImp implements BankDao {
 		allEmployee.add(new BankEmployeePojo(2344,"jon"));
 		allEmployee.add(new BankEmployeePojo(59696,"dan"));
 		allEmployee.add(new BankEmployeePojo(856,"roby"));
-		
 	}
 
 	@Override
@@ -51,7 +50,22 @@ public class BankDaoImp implements BankDao {
 		
 		return bankPojo;
 	}
-
+	@Override
+	public BankEmployeePojo LogInEmp(int emoId,String empName) {
+		BankEmployeePojo returnBankPojo=null;
+		Iterator<BankEmployeePojo> itr = allEmployee.iterator();
+		while(itr.hasNext()) {
+			BankEmployeePojo bank = itr.next();
+			
+			if(bank.getEmployeeID() == emoId || bank.getEmployeeName() == empName) 
+				returnBankPojo = bank;
+		
+		}
+		return returnBankPojo;
+	
+		
+	}
+	
 	@Override
 	public BankPojo fetchCAcc(int customerid) {
 		
@@ -98,7 +112,7 @@ public class BankDaoImp implements BankDao {
 	@Override
 	public BankPojo fechWithdawel(int customerid,double mony) {
 		BankPojo returnBankPojo=null;
-		;
+		
 		Iterator<BankPojo> itr = allCustomer.iterator();
 		while(itr.hasNext()) {
 			BankPojo bank = itr.next();
@@ -106,23 +120,32 @@ public class BankDaoImp implements BankDao {
 			if(bank.getCustomerID() == customerid) 
 				returnBankPojo = bank;
 			
-		double	  balance=bank.getBlance();
+		double	  balance=bank.getAccounntBlance();
 		
 			balance-=mony;
 			
-			balance=bank.getBlance();
+			balance=bank.getAccounntBlance();
 			returnBankPojo = bank;
 		}
 		return returnBankPojo;
 	}
 
+
+	
 	@Override
-	public BankPojo depositMoney(double monye) {
-		// TODO Auto-generated method stub
-		return null;
+	public BankPojo logIN(String name ,String passWord) {
+		BankPojo returnBankPojo=null;
+		Iterator<BankPojo> itr = allCustomer.iterator();
+		while(itr.hasNext()) {
+			BankPojo bank = itr.next();
+			
+			if(bank.getCustomerFirsttName() == name || bank.getPassWord() == passWord) 
+				returnBankPojo = bank;
+		
+		}
+		return returnBankPojo;
+	
 	}
-
-
 
 
 

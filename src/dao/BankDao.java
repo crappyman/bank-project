@@ -12,8 +12,8 @@ public interface BankDao {
 	// create a list of employee name
 	List<BankEmployeePojo> allEmployee();
 
-	// to create a customer account
-
+	// to let the Employee log in to his Account
+	BankEmployeePojo LogInEmp(int emoId,String empName);
 	// to check the exist of the customer account
 	BankPojo fetchCAcc(int customerid);
 
@@ -26,10 +26,10 @@ public interface BankDao {
 	// to withdrawal
 	BankPojo fechWithdawel(int customerid,double mony);
 
-	// to deposit money
-	BankPojo depositMoney(double monye);
 	//to add an Account
 
 	BankPojo addAccount(BankPojo bankPojo);
+	
+BankPojo logIN(String name ,String passWord);
 
 }

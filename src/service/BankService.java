@@ -27,7 +27,10 @@ public interface BankService {
 		// to withdrawal
 		BankPojo fechWithdawel(int customerID,double mony);
 
-		// to deposit money
-		BankPojo depositMoney(double monye);
+		
+		///to log in
+		 BankPojo logIN(String name ,String passWord);
+		 
+		 BankEmployeePojo LogInEmp(int emoId,String empName);
 
 }
