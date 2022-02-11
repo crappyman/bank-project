@@ -2,6 +2,8 @@ package presentation;
 import java.util.List;
 import java.util.Scanner;
 
+import javax.swing.text.html.HTMLDocument.Iterator;
+
 import pojo.BankEmployeePojo;
 import pojo.BankPojo;
 import service.BankService;
@@ -12,13 +14,17 @@ public class BankMain {
 	public static void main(String[] args) {
 		BankService bankService = new BankServiceImpl();
 		Scanner scan = new Scanner(System.in);
+		
+char ch  = 'y';
+		
+		while(ch == 'y') {
 		System.out.println("*************************************");
 		System.out.println("\t Chase  Bank Wellcome");
 		System.out.println("*************************************");
 		
 		
-		System.out.println("Please Enter 1 iF Yuo Are An Employee.");
-		System.out.println("Please Enter 2 iF Yuo Are A Customer.");
+		System.out.println("Please Enter 1 iF You Are An Employee.");
+		System.out.println("Please Enter 2 iF You Are A Customer.");
 		
 		int emo=scan.nextInt();
 		while (emo==1) {
@@ -32,14 +38,69 @@ public class BankMain {
   				System.out.println("Please enter a valid Account Number !");
   				 break;
   			}
-			System.out.println("Wellcome "+empName + "please Enter Your Choise");
+			System.out.println("Wellcome "+empName + "  please Enter Your Choise");
 			
+			
+		      System.out.println("1.Register or Creating A New Customer");
+	            System.out.println("2. List all the cusomers");
+	            System.out.println("3. Transfer mony to Another Account");
+	            System.out.println("4. View Transaction");
+	            System.out.println("5. to quit: \n");
+	            System.out.print("Enter Your Choice : ");
+	          int  userChoice2 = scan.nextInt();
+	          scan.nextLine();
+	          System.out.println("*************************************");
+	          switch (userChoice2) {
+	                
+	          case 1:  BankPojo newAcc=new BankPojo();
+	          System.out.println("Enter Your Full Name :");
+	          newAcc.setCustomerLastName(scan.next());
+	          
+	          System.out.println("Enter Your PassWord :");
+	          newAcc.setPassWord(scan.next());
+	          
+	          System.out.println(" Enter Your Money you Want To Put In Your Account :");
+	          newAcc.setAccounntBlance(scan.nextLong());
+	          
+	          BankPojo addAcco = bankService.addAccount(newAcc);
+	          System.out.println("Account Added Successfully!!\nYour new Account  is " + addAcco.getCustomerID());
+	          System.out.println("Your Money Blance is "+addAcco.getAccounntBlance() );
+	      break;
+	      
+	      
+	          case 2:
+	        	  List<BankPojo> allCuomer =bankService.allCustomer();
+	        	  java.util.Iterator<BankPojo> itr = allCuomer.iterator();
+	        	  
+	        	  System.out.println("**************************************************************************************");
+					System.out.println("ID \t\t\t FiRST NAME \t\t\t\t\tLAST NAME \t\t\t\tBALANCE\t\t\t\t\tPhone NUBER");
+					System.out.println("**************************************************************************************");
+					while(itr.hasNext()) {
+						BankPojo bank = itr.next();
+						System.out.println(bank.getCustomerID() + "\t" + bank.getCustomerFirsttName() + "\t" + bank.getCustomerLastName() + "\t" + bank.getAccounntBlance()+ "\t \t"+bank.getPhoneNumber());
+					}
+					System.out.println("**************************************************************************************");
+	        	   break;
+	        	   
+	          case 3:
+	        	  break;
+	          case 4:
+	        	  break;
+	          case 5:
+	        	  System.out.println("************************************");
+				System.out.println("Exiting System....");
+				System.out.println("Thankyou for using Bank Management System");
+				System.out.println("************************************");
+				System.exit(0);
 			
 			
 		}
-		char ch = 'y';
-		
-		while(ch == 'y') {
+	          
+	          System.out.println("Do you want to continue(y/n) : ");
+				ch = scan.next().charAt(0);
+				scan.nextLine();
+		}
+
 
 			System.out.println("*************************************");
 			System.out.println("\t Chase  Bank Management System");
@@ -130,11 +191,7 @@ public class BankMain {
           
           System.out.println("Wellcome "+name);
           
-				System.out.println("************************************");
-				System.out.println("Exiting System....");
-				System.out.println("Thankyou for using Bank Management System");
-				System.out.println("************************************");
-				System.exit(0);
+				
 	
 		}
 		System.out.println("Do you want to continue(y/n) : ");
