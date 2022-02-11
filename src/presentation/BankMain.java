@@ -43,9 +43,7 @@ char ch  = 'y';
 			
 		      System.out.println("1.Register or Creating A New Customer");
 	            System.out.println("2. List all the cusomers");
-	            System.out.println("3. Transfer mony to Another Account");
-	            System.out.println("4. View Transaction");
-	            System.out.println("5. to quit: \n");
+	             System.out.println("3. to quit: \n");
 	            System.out.print("Enter Your Choice : ");
 	          int  userChoice2 = scan.nextInt();
 	          scan.nextLine();
@@ -83,10 +81,6 @@ char ch  = 'y';
 	        	   break;
 	        	   
 	          case 3:
-	        	  break;
-	          case 4:
-	        	  break;
-	          case 5:
 	        	  System.out.println("************************************");
 				System.out.println("Exiting System....");
 				System.out.println("Thankyou for using Bank Management System");
@@ -99,38 +93,45 @@ char ch  = 'y';
 	          System.out.println("Do you want to continue(y/n) : ");
 				ch = scan.next().charAt(0);
 				scan.nextLine();
+				
+				
 		}
+		
+		while (emo==2) {
 
 
 			System.out.println("*************************************");
 			System.out.println("\t Chase  Bank Management System");
 			System.out.println("*************************************");
-			System.out.println("1. Create Account");
-            System.out.println("2. Deposit money");
-            System.out.println("3. Withdraw money");
-            System.out.println("4. Check balance");
-            System.out.println("5. log in");
-            System.out.println("0. to quit: \n");
-            System.out.print("Enter Your Choice : ");
-          int  userChoice = scan.nextInt();
-          scan.nextLine();
-          System.out.println("*************************************");
-          switch (userChoice) {
+			 System.out.println("please Log IN ");
+              System.out.println("please enter your Full Name And Password ");
+              String  name =scan.next();
+              System.out.println("Enter your PassWord:");
+             
+              String password=scan.next();
+              
+              BankPojo name3=bankService.logIN(name, password);
+              if(name3 == null) {
+    				System.out.println("Please enter a valid Account Number !");
+    				break;
+            }
+                System.out.println("Wellcome "+name);
+               
+                System.out.print("Enter Your Choice : ");
+                System.out.println("1. Transfer Money from anther Account");
+               
+                System.out.println("2. Deposit money");
+                System.out.println("3. Withdraw money");
+                System.out.println("4. Check balance And View History");
+              
+                System.out.println("5.  to quit: \\n");
+                int  userChoice = scan.nextInt();
+              scan.nextLine();
+              System.out.println("*************************************");
+                switch (userChoice) {
                 
-          case 1:
-        	  BankPojo newAcc=new BankPojo();
-          System.out.println("Enter Your Full Name :");
-          newAcc.setCustomerLastName(scan.next());
-          
-          System.out.println("Enter Your PassWord :");
-          newAcc.setPassWord(scan.next());
-          
-          System.out.println(" Enter Your Money you Want To Put In Your Account :");
-          newAcc.setAccounntBlance(scan.nextLong());
-          
-          BankPojo addAcco = bankService.addAccount(newAcc);
-          System.out.println("Account Added Successfully!!\nYour new Account  is " + addAcco.getCustomerID());
-          System.out.println("Your Money Blance is "+addAcco.getAccounntBlance() );
+                case 1:
+                	
       break;
           
           case 2:
@@ -177,22 +178,11 @@ char ch  = 'y';
           
 	
          
-          case 5: System.out.println("please Log IN ");
-          System.out.println("please enter your Full Name And Password ");
-          String  name =scan.next();
-         
-          String password=scan.nextLine();
-          
-          BankPojo name3=bankService.logIN(name, password);
-          if(name3 == null) {
-				System.out.println("Please enter a valid Account Number !");
-				break;
-        }
-          
-          System.out.println("Wellcome "+name);
+          case 5: 
           
 				
 	
+		}
 		}
 		System.out.println("Do you want to continue(y/n) : ");
 		ch = scan.next().charAt(0);

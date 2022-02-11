@@ -15,12 +15,12 @@ public class BankDaoImp implements BankDao {
 	public BankDaoImp() {
 		allCustomer=new ArrayList<BankPojo>();
 		
-		BankPojo bank1=new BankPojo(101,"Daria","Hassn", "39999",576.9);
+//		BankPojo bank1=new BankPojo(101,"Daria","Hassn", "39999",576.9);
 		BankPojo bank2=new BankPojo(102,"Bob","Hada","895354",567);
 		BankPojo bank3=new BankPojo(103,"Samanta","Salma","575574",694);
 		
 		
-		allCustomer.add(bank1);
+		allCustomer.add(new BankPojo(101,"Daria","Hassn", "39999",576.9));
 		allCustomer.add(bank2);
 		allCustomer.add(bank3);
 		
@@ -139,7 +139,7 @@ public class BankDaoImp implements BankDao {
 		while(itr.hasNext()) {
 			BankPojo bank = itr.next();
 			
-			if(bank.getCustomerFirsttName() == name || bank.getPassWord() == passWord) 
+			if(bank.getCustomerFirsttName() == name && bank.getPassWord() == passWord) 
 				returnBankPojo = bank;
 		
 		}
