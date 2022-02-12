@@ -23,9 +23,10 @@ public interface BankService {
 		BankEmployeePojo fechEAcc( int employeeID);
 
 		BankPojo fechBlance(int customerID);
+		// public double getBalance()
 
 		// to withdrawal
-		BankPojo fechWithdawel(int customerID,double mony);
+		BankPojo Withdawel(BankPojo bankPojo);
 
 		
 		///to log in

@@ -47,13 +47,16 @@ public class BankServiceImpl implements BankService {
 	public BankPojo  fechBlance(int customerID) 
 	{
 		
-		return bankDao.fechBlance(customerID);
+	return bankDao.fechBlance(customerID);
 		
 	}
+	
+		 
+	 
 
 	@Override
-	public BankPojo fechWithdawel( int customerID,double mony) {
-		return bankDao.fechWithdawel(customerID, mony);
+	public BankPojo Withdawel( BankPojo bankPojo) {
+		return bankDao.Withdawel(bankPojo);
 	}
 
 

@@ -24,12 +24,18 @@ public interface BankDao {
 	BankPojo fechBlance(int customerid);
 
 	// to withdrawal
-	BankPojo fechWithdawel(int customerid,double mony);
+	BankPojo Withdawel(BankPojo bankPojo);
 
 	//to add an Account
 
 	BankPojo addAccount(BankPojo bankPojo);
 	
 BankPojo logIN(String name ,String passWord);
+
+BankPojo transfer(double amount, int account);
+
+BankPojo deposit(double amount);
+
+
 
 }

@@ -111,10 +111,11 @@ char ch  = 'y';
               String password=scan.next();
               
               BankPojo name3=bankService.logIN(name, password);
-              if(name3 == null) {
+             /* if(name3 == null) {
     				System.out.println("Please enter a valid Account Number !");
     				break;
-            }
+            }*/
+            
                 System.out.println("Wellcome "+name);
                
                 System.out.print("Enter Your Choice : ");
@@ -159,19 +160,19 @@ char ch  = 'y';
   			 System.out.println("Enter the Monye  that you want to Withdrall: ");
   			  double updatmonyy = scan.nextLong();
   			
-  			BankPojo fecNewBlancee=bankService.fechWithdawel(accNn, updatmonyy);
+  			BankPojo fecNewBlancee=bankService.Withdawel( updatmonyy);
   			
   			System.out.println("Your New Balance Is"+fecNewBlancee.getAccounntBlance());
         	  break;
           case 4:
         	  System.out.println("please enter your Account Number");
           int  accN2 = scan.nextInt();
-          BankPojo blanse=bankService.fechBlance(accN2);
+         BankPojo blanse=bankService.fechBlance(accN2);
          
-          if(blanse == null) {
-				System.out.println("Please enter a valid Account Number !");
-				 break;
-          }
+         if(blanse == null) {
+			System.out.println("Please enter a valid Account Number !");
+			 break;
+        }
          
           System.out.println("Your Money Blance is "+blanse.getAccounntBlance());
 				 
@@ -179,7 +180,12 @@ char ch  = 'y';
 	
          
           case 5: 
-          
+        	  System.out.println("************************************");
+				System.out.println("Exiting System....");
+				System.out.println("Thankyou for using Bank Management System");
+				System.out.println("************************************");
+				System.exit(0);
+			
 				
 	
 		}

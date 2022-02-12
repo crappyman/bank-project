@@ -25,6 +25,10 @@ public class BankPojo {
 		this.accounntBlance = accounntBlance;
 
 	}
+	public BankPojo(String customerFirsttName,String passWord) {
+		this.customerFirsttName = customerFirsttName;
+		this.passWord = passWord;
+	}
 
 	public String getCustomerLastName() {
 		return customerLastName;

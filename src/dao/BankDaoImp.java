@@ -15,12 +15,12 @@ public class BankDaoImp implements BankDao {
 	public BankDaoImp() {
 		allCustomer=new ArrayList<BankPojo>();
 		
-//		BankPojo bank1=new BankPojo(101,"Daria","Hassn", "39999",576.9);
-		BankPojo bank2=new BankPojo(102,"Bob","Hada","895354",567);
-		BankPojo bank3=new BankPojo(103,"Samanta","Salma","575574",694);
+	BankPojo bank1=new BankPojo(101,"Daria","Hassn", "111",576.9);
+		BankPojo bank2=new BankPojo(102,"Bob","Hada","222",567);
+		BankPojo bank3=new BankPojo(103,"Samanta","Salma","333",694);
 		
 		
-		allCustomer.add(new BankPojo(101,"Daria","Hassn", "39999",576.9));
+		allCustomer.add(new BankPojo("Daria","3999"));
 		allCustomer.add(bank2);
 		allCustomer.add(bank3);
 		
@@ -93,7 +93,6 @@ public class BankDaoImp implements BankDao {
 		return returnEBankPojo;
 		}
 	
-
 	@Override
 	public BankPojo  fechBlance(int customerid) {    
 		BankPojo returnBankPojo=null;
@@ -107,28 +106,33 @@ public class BankDaoImp implements BankDao {
 		}
 		return returnBankPojo;
 		}
-		
 	
 	@Override
-	public BankPojo fechWithdawel(int customerid,double mony) {
-		BankPojo returnBankPojo=null;
+	 public BankPojo deposit(double amount) {
+		return null;
+	      
+	    }
+	 @Override
+	    public BankPojo transfer(double amount, int account) {
+			return null;
+	       
+	    }
+	
+	@Override
+	public BankPojo Withdawel(BankPojo bankPojo) {
 		
-		Iterator<BankPojo> itr = allCustomer.iterator();
-		while(itr.hasNext()) {
-			BankPojo bank = itr.next();
-			
-			if(bank.getCustomerID() == customerid) 
-				returnBankPojo = bank;
-			
-		double	  balance=bank.getAccounntBlance();
-		
-			balance-=mony;
-			
-			balance=bank.getAccounntBlance();
-			returnBankPojo = bank;
+		for(int i=0; i<allCustomer.size(); i++) {
+			if(allCustomer.get(i).getCustomerID()== bankPojo.getCustomerID()) {
+				allCustomer.set(i, bankPojo);
+			}
 		}
-		return returnBankPojo;
-	}
+		return bankPojo;
+	
+			
+			
+		}
+
+
 
 
 	
@@ -139,7 +143,7 @@ public class BankDaoImp implements BankDao {
 		while(itr.hasNext()) {
 			BankPojo bank = itr.next();
 			
-			if(bank.getCustomerFirsttName() == name && bank.getPassWord() == passWord) 
+			if(bank.getCustomerFirsttName() == name || bank.getPassWord() == passWord) 
 				returnBankPojo = bank;
 		
 		}
