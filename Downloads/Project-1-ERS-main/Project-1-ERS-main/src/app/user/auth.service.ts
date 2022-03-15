@@ -1,0 +1,31 @@
+import { Injectable } from '@angular/core';
+import { ConnectableObservable } from 'rxjs';
+import { User } from './login/user.model';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class AuthService {
+  //purpose of this service is to store and retrieve use info from browser storage
+  //and mark if a person has logged in or logged
+  constructor() { }
+
+  loggedIn: boolean = false;
+
+  storeUser(user: User) {
+    //javascript object     key used to get user values
+    console.log("AUTH USER", user)
+    sessionStorage.setItem("userInfo", JSON.stringify(user));
+  }
+
+  retrieveUser(): User {
+    let data: any = sessionStorage.getItem("userInfo");
+    console.log("this is data:"+ data);
+    console.log(this.loggedIn);
+    return JSON.parse(data);
+  }
+
+  destroyUser(): void {
+    sessionStorage.removeItem("userInfo");
+  }
+}
