@@ -23,7 +23,7 @@ public class ExpenseMain {
 			List<UserPojo> allAccouts = userService.fetchAllAccounts();
 			ctx.json(allAccouts);
 		});
-		
+		//TEST
 		// fetchAAccount
 		myServer.get("/api/accounts/{bid}", ctx -> {
 			String userId = ctx.pathParam("bid");
